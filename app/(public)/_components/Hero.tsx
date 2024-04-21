@@ -2,6 +2,7 @@ import Link from "next/link";
 import { RiFacebookBoxFill, RiInstagramFill, RiTwitterXFill } from "react-icons/ri";
 
 export default async function Hero() {
+
   const heroDescription = "Web Developer & Logic Enthusiast Passionate web developer, embracing challenges with logic and creativity. Thriving on problem-solving, I craft experiences that blend innovation and functionality. Let's build something extraordinary together."
   return (
     <section className="grid grid-cols-1 gap-y-6 md:grid-cols-2 min-h-screen" id="hero">
