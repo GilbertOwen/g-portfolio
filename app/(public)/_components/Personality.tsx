@@ -6,7 +6,7 @@ import { MdOutlineContentPasteSearch } from "react-icons/md";
 
 export default function Personality() {
   const load = [1, 2, 3, 4, 5];
-  const outerModal = useRef(null);
+  const outerModal = useRef<any>(null);
   const modal = useRef<any>(null);
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
