@@ -31,7 +31,7 @@ export default function Sidebar() {
       </div>
       <div
         className={`fixed ${
-          !isOpen ? "left-[-100px] md:left-[-200px]" : "left-6 md:left-10"
+          !isOpen ? "left-[-200px] md:left-[-200px]" : "left-6 md:left-10"
         } top-4 md:top-8 md:left-10 bg-[#DEAC80] w-[200px] h-fit rounded-md px-2 py-4 z-[10] transition-all duration-200 ease-in shadow-md`}
         id="sidebar"
       >
