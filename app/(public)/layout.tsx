@@ -1,6 +1,5 @@
-import { Fragment } from "react";
-import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import Sidebar from "./_components/Sidebar";
 
 export default function PublicLayout({
   children,
@@ -9,7 +8,7 @@ export default function PublicLayout({
 }) {
   return (
     <div className="bg-[#F7DCB9]">
-      {/* <Navbar></Navbar> */}
+      <Sidebar></Sidebar>
       <div className="min-h-screen">{children}</div>
       <Footer></Footer>
     </div>
