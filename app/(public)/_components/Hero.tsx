@@ -64,7 +64,7 @@ export default function Hero() {
           duration: 0.7,
         });
       });
-      return () => ctx.kill();
+      return () => ctx.revert();
     });
   }, [widthSize]);
   const heroDescription =
