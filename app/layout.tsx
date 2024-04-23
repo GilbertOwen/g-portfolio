@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={poppins.className + ' relative'}>{children}</body>
+      <body className={poppins.className + ' relative scroll-smooth'}>{children}</body>
     </html>
   );
 }

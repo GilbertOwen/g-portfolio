@@ -38,10 +38,10 @@ export default function Sidebar() {
         <Link href={"/project"} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
           Project
         </Link>
-        <Link href={"/project"} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
+        <Link href={"/"} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
           Main
         </Link>
-        <Link href={"/project"} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
+        <Link href={"/more"} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
           More
         </Link>
       </div>
