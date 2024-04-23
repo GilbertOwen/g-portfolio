@@ -7,7 +7,7 @@ export default function Studied({
 }: {
   lessons: { name: string; icon: JSX.Element; description: string }[];
 }) {
-  
+  const studiedDescription = "Along my journey to go deep into technology world, i've studied things below :"
   const [order, setOrder] = useState<number>(0);
   const handleButton = (type: string) => {
     if (type === "prev") {
@@ -33,8 +33,7 @@ export default function Studied({
         Studied
       </h1>
       <p className="text-center font-regular text-xl xl:text-2xl select-none text-[#B99470] mb-8">
-        Along my journey to go deep into technology world, i've studied things
-        below :
+        {studiedDescription}
       </p>
       <div className="flex flex-row items-center gap-x-1 md:gap-x-4 w-fit mx-auto mb-4">
         <FaCaretLeft
