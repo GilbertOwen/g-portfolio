@@ -48,7 +48,7 @@ export default function Anything() {
       id="anything"
       className={`${
         !isOpen ? "h-fit" : "min-h-screen"
-      } pb-6 px-4 sm:px-12 md:px-24 lg:px-36 xl:px-48 anything`}
+      } 2xl:container 2xl:mx-auto  pb-6 px-4 sm:px-12 md:px-24 lg:px-36 xl:px-48 anything`}
     >
       <div className="anything-container grid grid-cols-2 gap-y-4 md:grid-cols-3 gap-x-4 md:gap-x-10">
         <button
