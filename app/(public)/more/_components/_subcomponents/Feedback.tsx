@@ -35,7 +35,7 @@ export default function FeedBack() {
             id="suggestion"
             maxLength={255}
             placeholder="Text your suggestion about my website at this form"
-            className="border-[#F7DCB9] min-h-32 p-2 border-[1px] focus:outline-[#F7DCB9] text-opacity-60 rounded-xl shadow-lg"
+            className="border-[#F7DCB9] bg-[#F7DCB9] min-h-32 p-2 border-[1px] focus:outline-[#F7DCB9] placeholder:text-[#B99470] text-[#B99470] rounded-xl shadow-lg"
           ></textarea>
         </div>
         <div className="flex flex-col gap-y-2">
@@ -50,7 +50,7 @@ export default function FeedBack() {
               <input
                 type="radio"
                 radioGroup="rating"
-                className="border-[#DEAC80] w-[16px] h-[16px]"
+                className="bg-[#F7DCB9] w-[16px] h-[16px]"
                 id="rating1"
                 name="rating"
               />
@@ -60,7 +60,7 @@ export default function FeedBack() {
               <input
                 type="radio"
                 radioGroup="rating"
-                className="border-[#DEAC80] w-[16px] h-[16px]"
+                className="bg-[#F7DCB9] w-[16px] h-[16px]"
                 id="rating2"
                 name="rating"
               />
@@ -70,7 +70,7 @@ export default function FeedBack() {
               <input
                 type="radio"
                 radioGroup="rating"
-                className="border-[#DEAC80] w-[16px] h-[16px]"
+                className="bg-[#F7DCB9] w-[16px] h-[16px]"
                 id="rating3"
                 name="rating"
               />
@@ -80,7 +80,7 @@ export default function FeedBack() {
               <input
                 type="radio"
                 radioGroup="rating"
-                className="border-[#DEAC80] w-[16px] h-[16px]"
+                className="bg-[#F7DCB9] w-[16px] h-[16px]"
                 id="rating4"
                 name="rating"
               />
@@ -90,7 +90,7 @@ export default function FeedBack() {
               <input
                 type="radio"
                 radioGroup="rating"
-                className="border-[#DEAC80] w-[16px] h-[16px]"
+                className="bg-[#F7DCB9] w-[16px] h-[16px]"
                 id="rating5"
                 name="rating"
               />
