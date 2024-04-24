@@ -28,13 +28,13 @@ export default function FeedBack() {
             htmlFor="suggestion"
             className="text-lg md:text-2xl font-semibold text-[#F7DCB9]"
           >
-            Suggestion and feedback
+            Suggestion
           </label>
           <textarea
             name="suggestion"
             id="suggestion"
             maxLength={255}
-            placeholder="Text your feedback or suggestion about my website in here"
+            placeholder="Text your suggestion about my website at this form"
             className="border-[#F7DCB9] min-h-32 p-2 border-[1px] focus:outline-[#F7DCB9] text-opacity-60 rounded-xl shadow-lg"
           ></textarea>
         </div>

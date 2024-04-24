@@ -35,13 +35,13 @@ export default function Sidebar() {
         } top-4 md:top-8 md:left-10 bg-[#DEAC80] w-[200px] h-fit rounded-md px-2 py-4 z-[10] transition-all duration-200 ease-in shadow-md`}
         id="sidebar"
       >
-        <Link href={"/project"} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
+        <Link href={"/project"} onClick={()=> setIsOpen(false)} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
           Project
         </Link>
-        <Link href={"/"} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
+        <Link href={"/"} onClick={()=> setIsOpen(false)} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
           Main
         </Link>
-        <Link href={"/more"} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
+        <Link href={"/more"} onClick={()=> setIsOpen(false)} className="w-full h-full text-xl px-2 text-[#F7DCB9] font-semibold hover:text-[#DEAC80] hover:bg-[#F7dcb9] rounded-md block py-2">
           More
         </Link>
       </div>
