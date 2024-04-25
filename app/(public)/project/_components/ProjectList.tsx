@@ -38,7 +38,7 @@ export default function ProjectList({ projects }: { projects: project[] }) {
     };
   });
   return (
-    <div className="project-list 2xl:container 2xl:mx-auto grid grid-cols-1 px-4 md:px-10 pb-16 gap-y-4">
+    <div className="project-list 2xl:container 2xl:mx-auto grid grid-cols-1 px-4 md:px-20 pb-16 gap-y-20">
 
       {projects.map((project, index) => (
         <div className="grid grid-cols-1 relative md:grid-cols-2" key={index}>
