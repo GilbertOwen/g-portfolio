@@ -1,4 +1,8 @@
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import Link from "next/link";
+import { useEffect } from "react";
 
 type project = {
   name: string;
@@ -8,8 +12,34 @@ type project = {
 };
 
 export default function ProjectList({ projects }: { projects: project[] }) {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    const tl = gsap.timeline({
+      scrollTrigger:{
+        trigger:'.project-list',
+        scrub:true,
+        start:"top center",
+        end: "+=30%",
+        toggleActions: "play restart reverse none",
+      }
+    })
+    tl.from(".project-list", {
+      opacity: 0,
+      x: -1000,
+    });
+    tl.to(".project-list", {
+      opacity: 1,
+      x: 0,
+      duration: 2,
+    });
+
+    return () => {
+      tl.kill();
+    };
+  });
   return (
-    <div className="grid grid-cols-1 px-4 md:px-10 pb-16 gap-y-4">
+    <div className="project-list 2xl:container 2xl:mx-auto grid grid-cols-1 px-4 md:px-10 pb-16 gap-y-4">
+
       {projects.map((project, index) => (
         <div className="grid grid-cols-1 relative md:grid-cols-2" key={index}>
           <div className="md:static w-full absolute bg-[rgba(0,0,0,0.3)] md:bg-[#DEAC80] md:text-left text-center top-0 md:items-start items-center flex flex-col pl-4 pr-4 md:pr-0 md:pl-10 py-4 md:py-8 h-full select-none">
