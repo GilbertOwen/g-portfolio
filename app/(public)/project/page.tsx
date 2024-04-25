@@ -21,9 +21,7 @@ export default async function ProjectPage() {
   ];
   return (
     <Fragment>
-      <div className="2xl:container 2xl:mx-auto min-h-screen flex flex-col pt-24 md:pt-28 pb-14">
         <CarouselProject></CarouselProject>
-      </div>
       <ProjectList projects={projects}></ProjectList>
     </Fragment>
   );
