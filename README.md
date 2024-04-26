@@ -1,5 +1,8 @@
 # Portfolio Project
 
+## Vercel Web Deploy :
+https://g-portfolio-alpha.vercel.app/
+
 ## Project : 
 2024
 Designed by Gilbert Owen
