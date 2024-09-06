@@ -41,38 +41,38 @@ export default function Personality({
     setModalContent(value);
     setModalOpen(true);
   };
-  useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".personality", // Change this to your desired trigger element
-        start: "top center", // Adjust as needed
-        end: "bottom center", // Adjust as needed
-        scrub: true, // Smooth animation when scrolling
-        toggleActions: "play restart reverse none", // Animation direction on scroll
-      },
-    });
+  // useEffect(() => {
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".personality", // Change this to your desired trigger element
+  //       start: "top center", // Adjust as needed
+  //       end: "bottom center", // Adjust as needed
+  //       scrub: true, // Smooth animation when scrolling
+  //       toggleActions: "play restart reverse none", // Animation direction on scroll
+  //     },
+  //   });
 
-    tl.from(".personality", {
-      opacity: 0.5,
-      x: -1400,
-    }).to(".personality", {
-      opacity: 1,
-      x: 0,
-      duration: 2,
-    });
-    tl.from(".hobby", {
-      opacity: 0.5,
-      x: -1400,
-    }).to(".hobby", {
-      opacity: 1,
-      x: 0,
-      duration: 2,
-    });
+  //   tl.from(".personality", {
+  //     opacity: 0.5,
+  //     x: -1400,
+  //   }).to(".personality", {
+  //     opacity: 1,
+  //     x: 0,
+  //     duration: 2,
+  //   });
+  //   tl.from(".hobby", {
+  //     opacity: 0.5,
+  //     x: -1400,
+  //   }).to(".hobby", {
+  //     opacity: 1,
+  //     x: 0,
+  //     duration: 2,
+  //   });
 
-    return () => {
-      tl.kill(); // Kill the animation when component unmounts
-    };
-  });
+  //   return () => {
+  //     tl.kill(); // Kill the animation when component unmounts
+  //   };
+  // });
   const handleIcon = (type: string, name: string) => {
     const theType = name.toLowerCase();
     if (type === "personality") {
@@ -87,7 +87,7 @@ export default function Personality({
       } else if (theType === "enthusiast") {
         return <GiLoveMystery color="#F7DCB9" size={140} />;
       }
-    }else if(type === 'hobby'){
+    } else if (type === "hobby") {
       if (theType === "hiking") {
         return <FaHiking color="#F7DCB9" size={150} />;
       } else if (theType === "gaming") {
@@ -102,7 +102,10 @@ export default function Personality({
     }
   };
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+      exit={{ opacity: 0, y: 100 }}
       id="personality"
       className="2xl:container 2xl:mx-auto min-h-screen flex flex-col py-6 mt-6"
     >
@@ -118,7 +121,7 @@ export default function Personality({
                 key={index}
                 onClick={(e) => handleModalOpen(person)}
               >
-                {handleIcon('personality' ,person.name)}
+                {handleIcon("personality", person.name)}
                 <h4 className="text-2xl md:text-3xl font-semibold">
                   {person.name}
                 </h4>
@@ -135,7 +138,7 @@ export default function Personality({
                 key={index}
                 onClick={(e) => handleModalOpen(like)}
               >
-                {handleIcon('hobby', like.name)}
+                {handleIcon("hobby", like.name)}
                 <h4 className="text-2xl md:text-3xl font-semibold">
                   {like.name}
                 </h4>
@@ -183,6 +186,6 @@ export default function Personality({
           </motion.div>
         </motion.div>
       )}
-    </section>
+    </motion.section>
   );
 }
