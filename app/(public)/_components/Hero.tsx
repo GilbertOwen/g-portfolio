@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
@@ -24,49 +25,49 @@ export default function Hero() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      const content = heroContent.current;
-      const imageBorder = heroImageBorder.current;
-      // const imageContent = heroImageBorder.current;
-      if (window.innerWidth > 768) {
-        gsap.from(content, { x: -500, opacity: 0 });
-        gsap.delayedCall(0.5, () => {
-          gsap.to(content, {
-            x: 0,
-            opacity: 1,
-            duration: 1,
-          });
-        });
-      } else {
-        gsap.from(content, { y: 100, opacity: 0 });
-        gsap.delayedCall(0.5, () => {
-          gsap.to(content, {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            delay: 0.5,
-          });
-        });
-      }
-      gsap.from(imageBorder, { y: 100, opacity: 0 });
-      gsap.delayedCall(0.5, () => {
-        gsap.to(imageBorder, {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-        });
-      });
-      gsap.from(".hero-image-content", { opacity: 0 });
-      gsap.delayedCall(1.5, () => {
-        gsap.to(".hero-image-content", {
-          opacity: 1,
-          duration: 0.7,
-        });
-      });
-      return () => ctx.revert();
-    });
-  }, [widthSize]);
+  // useEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     const content = heroContent.current;
+  //     const imageBorder = heroImageBorder.current;
+  //     // const imageContent = heroImageBorder.current;
+  //     if (window.innerWidth > 768) {
+  //       gsap.from(content, { x: -500, opacity: 0 });
+  //       gsap.delayedCall(0.5, () => {
+  //         gsap.to(content, {
+  //           x: 0,
+  //           opacity: 1,
+  //           duration: 1,
+  //         });
+  //       });
+  //     } else {
+  //       gsap.from(content, { y: 100, opacity: 0 });
+  //       gsap.delayedCall(0.5, () => {
+  //         gsap.to(content, {
+  //           y: 0,
+  //           opacity: 1,
+  //           duration: 0.5,
+  //           delay: 0.5,
+  //         });
+  //       });
+  //     }
+  //     gsap.from(imageBorder, { y: 100, opacity: 0 });
+  //     gsap.delayedCall(0.5, () => {
+  //       gsap.to(imageBorder, {
+  //         y: 0,
+  //         opacity: 1,
+  //         duration: 0.5,
+  //       });
+  //     });
+  //     gsap.from(".hero-image-content", { opacity: 0 });
+  //     gsap.delayedCall(1.5, () => {
+  //       gsap.to(".hero-image-content", {
+  //         opacity: 1,
+  //         duration: 0.7,
+  //       });
+  //     });
+  //     return () => ctx.revert();
+  //   });
+  // }, [widthSize]);
   const heroDescription =
     "Web Developer & Logic Enthusiast Passionate web developer, embracing challenges with logic and creativity. Thriving on problem-solving, I craft experiences that blend innovation and functionality. Let's build something extraordinary together.";
   return (
@@ -74,7 +75,10 @@ export default function Hero() {
       className="2xl:container 2xl:mx-auto grid grid-cols-1 gap-y-6 md:grid-cols-2 min-h-screen"
       id="hero"
     >
-      <div
+      <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
+      exit={{ opacity: 0, x: -100 }}
         id="hero-content"
         ref={heroContent}
         className="hero-content flex-grow flex flex-col md:items-start items-center text-center md:text-left justify-center mb-4 pl-0 md:pl-10 md:order-1 order-2 md:px-0"
@@ -100,19 +104,25 @@ export default function Hero() {
             <RiTwitterXFill size={40} color="#B5C18E" />
           </a>
         </div>
-      </div>
+      </motion.div>
       <div
         id="hero-image"
         className="bg-[#B5C18E] flex flex-col items-center md:h-full h-[400px] relative overflow-hidden justify-center order-1 md:order-2"
       >
-        <img
+        <motion.img
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+        exit={{ opacity: 0, y: 100 }}
           ref={heroImageBorder}
           src="/assets/border-hero-image.png"
           className="hero-image-border"
           alt=""
           id="hero-image-border"
         />
-        <img
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 0.6, delay:0.6 } }}
+          exit={{ opacity: 0, x: 100 }}
           src="/assets/person.png"
           alt=""
           // id="hero-image-content"

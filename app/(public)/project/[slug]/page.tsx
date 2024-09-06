@@ -6,11 +6,17 @@ import { motion } from "framer-motion";
 
 export default function ProjectDetailPage() {
   const project = {
+    name: "To-do List Project",
+    slug: "whado",
+    createdAt: "31-06-2024",
     description:
-      "This project is a reflection of myself, encapsulating my personality, interests, and experiences. Through this website, visitors will gain insights into who I am, my passions, and the work I've done. Every aspect of this portfolio is meticulously crafted to showcase not just my skills but also my unique identity. From the design elements to the content, each detail is a deliberate choice that represents me authentically. This website serves as both a professional showcase and a personal statement, allowing others to connect with me on a deeper level and understand what drives me creatively and professionally.",
-    name: "Portfolio Project",
-    createdAt: "19-07-2000",
+      "This project is me itself. From this website, you will know about my personality, hobby, and etc. The project is this website itself though",
+    image: image1.src,
+    url: "https://to-do-list-project-two-ivory.vercel.app/",
   };
+  const projects = [
+    
+  ];
   return (
     <Fragment>
       <div className="w-full flex flex-col pt-24 md:pt-28 pb-12 overflow-hidden relative gap-y-10">
